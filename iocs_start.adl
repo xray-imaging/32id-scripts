@@ -245,7 +245,7 @@ display {
 		height=20
 	}
 	monitor {
-		chan="32id:TXMOptics:TXMStatus"
+		chan="32id:TXMOptics:TXMOpticsStatus"
 		clr=14
 		bclr=51
 	}
