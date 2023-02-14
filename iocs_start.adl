@@ -1,14 +1,14 @@
 
 file {
-	name="/home/beams/USERTXM/scripts/iocs_start.adl"
+	name="/home/beams19/USERTXM/scripts/iocs_start.adl"
 	version=030111
 }
 display {
 	object {
-		x=1616
-		y=865
+		x=408
+		y=1329
 		width=665
-		height=394
+		height=455
 	}
 	clr=14
 	bclr=4
@@ -90,7 +90,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=10
+		y=3
 		width=240
 		height=30
 	}
@@ -105,7 +105,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=252
+		y=248
 		width=240
 		height=30
 	}
@@ -120,7 +120,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=115
+		y=108
 		width=240
 		height=30
 	}
@@ -135,7 +135,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=287
+		y=283
 		width=240
 		height=30
 	}
@@ -150,7 +150,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=150
+		y=143
 		width=240
 		height=30
 	}
@@ -165,7 +165,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=322
+		y=318
 		width=240
 		height=30
 	}
@@ -180,7 +180,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=357
+		y=353
 		width=240
 		height=30
 	}
@@ -195,7 +195,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=45
+		y=38
 		width=240
 		height=30
 	}
@@ -210,7 +210,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=80
+		y=73
 		width=240
 		height=30
 	}
@@ -225,7 +225,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=15
+		y=8
 		width=151
 		height=20
 	}
@@ -240,7 +240,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=50
+		y=43
 		width=400
 		height=20
 	}
@@ -256,7 +256,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=85
+		y=78
 		width=100
 		height=20
 	}
@@ -273,7 +273,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=155
+		y=148
 		width=100
 		height=20
 	}
@@ -290,7 +290,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=120
+		y=113
 		width=400
 		height=20
 	}
@@ -306,7 +306,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=257
+		y=253
 		width=400
 		height=20
 	}
@@ -322,7 +322,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=292
+		y=288
 		width=100
 		height=20
 	}
@@ -339,7 +339,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=327
+		y=323
 		width=400
 		height=20
 	}
@@ -355,7 +355,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=362
+		y=358
 		width=100
 		height=20
 	}
@@ -372,7 +372,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=183
+		y=178
 		width=240
 		height=30
 	}
@@ -387,7 +387,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=188
+		y=183
 		width=400
 		height=20
 	}
@@ -403,7 +403,7 @@ display {
 "shell command" {
 	object {
 		x=10
-		y=218
+		y=213
 		width=240
 		height=30
 	}
@@ -418,7 +418,7 @@ display {
 "text update" {
 	object {
 		x=260
-		y=223
+		y=218
 		width=100
 		height=20
 	}
@@ -428,6 +428,69 @@ display {
 		bclr=2
 	}
 	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"shell command" {
+	object {
+		x=10
+		y=388
+		width=240
+		height=30
+	}
+	command[0] {
+		label="Energy"
+		name="bash /home/beams/USERTXM/scripts/energy_IOC.sh"
+	}
+	clr=0
+	bclr=49
+	label="-Energy IOC"
+}
+"shell command" {
+	object {
+		x=10
+		y=423
+		width=240
+		height=30
+	}
+	command[0] {
+		label="Energy"
+		name="bash /home/beams/USERTXM/scripts/energy_server.sh"
+	}
+	clr=0
+	bclr=49
+	label="-Energy server"
+}
+"text update" {
+	object {
+		x=260
+		y=428
+		width=100
+		height=20
+	}
+	monitor {
+		chan="32id:Energy:ServerRunning"
+		clr=14
+		bclr=2
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"text update" {
+	object {
+		x=260
+		y=393
+		width=400
+		height=20
+	}
+	monitor {
+		chan="32id:Energy:EnergyStatus"
+		clr=14
+		bclr=51
+	}
 	format="string"
 	limits {
 	}
