@@ -1,0 +1,11 @@
+echo "Old:"
+git config user.email
+git config user.name
+echo "New:"
+git config user.email 'alberto.mittone@gmail.com'
+git config user.name 'Alberto Mittone'
+git config user.email
+git config user.name
+
+
+
