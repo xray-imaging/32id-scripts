@@ -176,3 +176,7 @@ auto_positions.sav*
 #tomoScan products
 .loglogin
 .config
+
+#epics products
+*_BAK.adl
+*_BAK.ui
