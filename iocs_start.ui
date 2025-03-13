@@ -1,0 +1,1219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+<class>MainWindow</class>
+<widget class="QMainWindow" name="MainWindow">
+    <property name="geometry">
+        <rect>
+            <x>408</x>
+            <y>1329</y>
+            <width>665</width>
+            <height>455</height>
+        </rect>
+    </property>
+    <property name="styleSheet">
+        <string>
+
+QWidget#centralWidget {background: rgba(187, 187, 187, 255);}
+
+</string>
+    </property>
+    <widget class="QWidget" name="centralWidget">
+        <widget class="caShellCommand" name="caShellCommand_0">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>3</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Detector IOC</string>
+            </property>
+            <property name="labels">
+                <string>Restart detector</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/detector_IOC.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_1">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>248</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TomoScanStream IOC</string>
+            </property>
+            <property name="labels">
+                <string>TomoScan</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/tomoscanstream_IOC.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_2">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>108</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TomoScan IOC</string>
+            </property>
+            <property name="labels">
+                <string>TomoScan</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/tomoscan_IOC.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_3">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>283</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TomoScanStream server</string>
+            </property>
+            <property name="labels">
+                <string>TomoScan</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/tomoscanstream_server.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_4">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>143</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TomoScan server</string>
+            </property>
+            <property name="labels">
+                <string>TomoScan</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/tomoscan_server.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_5">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>318</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TomoStream IOC</string>
+            </property>
+            <property name="labels">
+                <string>TomoScan</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/tomostream_IOC.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_6">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>353</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TomoStream server</string>
+            </property>
+            <property name="labels">
+                <string>TomoScan</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/tomostream_server.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_7">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>38</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-txmOptics IOC</string>
+            </property>
+            <property name="labels">
+                <string>Restart detector</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/txmoptics_IOC.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_8">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>73</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-txmOptics server</string>
+            </property>
+            <property name="labels">
+                <string>Restart detector</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/txmoptics_server.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_0">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>8</y>
+                    <width>151</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32idcSP1:cam1:DetectorState_RBV</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>216</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>187</red>
+                    <green>187</green>
+                    <blue>187</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>decimal</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_1">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>43</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TXMOptics:TXMOpticsStatus</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_2">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>78</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TXMOptics:ServerRunning</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Alarm_Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_3">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>148</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TomoScan:ServerRunning</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Alarm_Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_4">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>113</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TomoScan:ScanStatus</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_5">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>253</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TomoScanStream:ScanStatus</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_6">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>288</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TomoScanStream:ServerRunning</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Alarm_Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_7">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>323</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TomoStream:ReconStatus</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_8">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>358</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TomoStream:ServerRunning</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Alarm_Static</enum>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_9">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>178</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TomoScanStep IOC</string>
+            </property>
+            <property name="labels">
+                <string>TomoScanStep</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/tomoscanstep_IOC.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_9">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>183</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TomoScanStep:ScanStatus</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_10">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>213</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-TomoScanStep server</string>
+            </property>
+            <property name="labels">
+                <string>TomoScan</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/tomoscanstep_server.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_10">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>218</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:TomoScanStep:ServerRunning</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Alarm_Static</enum>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_11">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>388</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Energy IOC</string>
+            </property>
+            <property name="labels">
+                <string>Energy</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/energy_IOC.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caShellCommand" name="caShellCommand_12">
+            <property name="geometry">
+                <rect>
+                    <x>10</x>
+                    <y>423</y>
+                    <width>240</width>
+                    <height>30</height>
+                </rect>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>255</red>
+                    <green>255</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>88</red>
+                    <green>52</green>
+                    <blue>15</blue>
+                </color>
+            </property>
+            <property name="label">
+                <string>-Energy server</string>
+            </property>
+            <property name="labels">
+                <string>Energy</string>
+            </property>
+            <property name="files">
+                <string>bash /home/beams/USERTXM/scripts/energy_server.sh</string>
+            </property>
+            <property name="args">
+                <string></string>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_11">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>428</y>
+                    <width>100</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:Energy:ServerRunning</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>218</red>
+                    <green>218</green>
+                    <blue>218</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Alarm_Static</enum>
+            </property>
+        </widget>
+        <widget class="caLineEdit" name="caLineEdit_12">
+            <property name="geometry">
+                <rect>
+                    <x>260</x>
+                    <y>393</y>
+                    <width>400</width>
+                    <height>20</height>
+                </rect>
+            </property>
+            <property name="fontScaleMode">
+                <enum>caLineEdit::WidthAndHeight</enum>
+            </property>
+            <property name="channel">
+                <string>32id:Energy:EnergyStatus</string>
+            </property>
+            <property name="foreground">
+                <color alpha="255">
+                    <red>0</red>
+                    <green>0</green>
+                    <blue>0</blue>
+                </color>
+            </property>
+            <property name="background">
+                <color alpha="255">
+                    <red>115</red>
+                    <green>223</green>
+                    <blue>255</blue>
+                </color>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="limitsMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="precisionMode">
+                <enum>caLineEdit::Channel</enum>
+            </property>
+            <property name="minValue">
+                <double>0.0</double>
+            </property>
+            <property name="maxValue">
+                <double>1.0</double>
+            </property>
+            <property name="alignment">
+                <set>Qt::AlignAbsolute|Qt::AlignLeft|Qt::AlignVCenter</set>
+            </property>
+            <property name="formatType">
+                <enum>string</enum>
+            </property>
+            <property name="colorMode">
+                <enum>caLineEdit::Static</enum>
+            </property>
+        </widget>
+        <zorder>caShellCommand_0</zorder>
+        <zorder>caShellCommand_1</zorder>
+        <zorder>caShellCommand_2</zorder>
+        <zorder>caShellCommand_3</zorder>
+        <zorder>caShellCommand_4</zorder>
+        <zorder>caShellCommand_5</zorder>
+        <zorder>caShellCommand_6</zorder>
+        <zorder>caShellCommand_7</zorder>
+        <zorder>caShellCommand_8</zorder>
+        <zorder>caLineEdit_0</zorder>
+        <zorder>caLineEdit_1</zorder>
+        <zorder>caLineEdit_2</zorder>
+        <zorder>caLineEdit_3</zorder>
+        <zorder>caLineEdit_4</zorder>
+        <zorder>caLineEdit_5</zorder>
+        <zorder>caLineEdit_6</zorder>
+        <zorder>caLineEdit_7</zorder>
+        <zorder>caLineEdit_8</zorder>
+        <zorder>caShellCommand_9</zorder>
+        <zorder>caLineEdit_9</zorder>
+        <zorder>caShellCommand_10</zorder>
+        <zorder>caLineEdit_10</zorder>
+        <zorder>caShellCommand_11</zorder>
+        <zorder>caShellCommand_12</zorder>
+        <zorder>caLineEdit_11</zorder>
+        <zorder>caLineEdit_12</zorder>
+    </widget>
+</widget>
+</ui>
