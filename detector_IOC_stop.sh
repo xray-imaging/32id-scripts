@@ -11,8 +11,6 @@ gnome-terminal --tab --title="$TAB_NAME" -- bash -c "
     ssh -t ${REMOTE_USER}@${REMOTE_HOST} '
         cd ${WORK_DIR}
         ./32idbSP1.sh stop
-        sleep 2
-        ./32idbSP1.sh run
     ';
 "
 
