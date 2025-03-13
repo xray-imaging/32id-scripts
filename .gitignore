@@ -160,6 +160,7 @@ script
 ###############
 O.*
 *BAK.adl
+*BAK.ui
 bin/
 db/
 dbd/
@@ -172,11 +173,9 @@ envPaths
 dllPath.bat
 auto_settings.sav*
 auto_positions.sav*
+.iocsh_history
+newDisplay.adl
 
 #tomoScan products
 .loglogin
 .config
-
-#epics products
-*_BAK.adl
-*_BAK.ui
