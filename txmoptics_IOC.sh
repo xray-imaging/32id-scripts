@@ -1,7 +1,18 @@
-gnome-terminal --tab --title "txmOptics IOC" -- bash -c "ssh -t usertxm@txm4 \
-'bash ~/scripts/kill_IOC.sh txmOpticsApp;  \
-bash ~/scripts/kill_server.sh start_txmoptics.py; \
-cd /home/beams/USERTXM/epics/synApps/support/txmoptics/iocBoot/iocTXMOptics/; \
-./start_IOC;\
-bash'" 
+#!/bin/bash
+
+# Define variables
+TAB_NAME="txmOptics IOC"
+REMOTE_USER="usertxm"
+REMOTE_HOST="txm4"
+APP_NAME="txmOpticsApp"
+WORK_DIR="/home/beams/USERTXM/epics/synApps/support/txmoptics/iocBoot/iocTXMOptics/"
+
+# Open a new tab in gnome-terminal, SSH into tomdet, activate conda, and run Python (without login shell)
+gnome-terminal --tab --title="$TAB_NAME" -- bash -c "
+    ssh -t ${REMOTE_USER}@${REMOTE_HOST} '
+        kill_IOC.sh ${APP_NAME}
+        cd ${WORK_DIR}
+        ./start_IOC;
+    ';
+"
 

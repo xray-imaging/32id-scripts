@@ -1,6 +1,18 @@
-gnome-terminal --tab --title "tomoStream IOC" -- bash -c "ssh -t usertxm@txmthree \
-'bash ~/scripts/kill_IOC.sh tomoStreamApp;  \
-bash ~/scripts/kill_server.sh start_tomostream.py; \
-cd /home/beams/USERTXM/epics/synApps/support/tomostream/iocBoot/iocTomoStream_32ID; \
-./start_IOC;\
-bash'" 
+#!/bin/bash
+
+# Define variables
+TAB_NAME="tomoStream IOC"
+REMOTE_USER="usertxm"
+REMOTE_HOST="txmthree"
+APP_NAME="tomoStreamApp"
+WORK_DIR="/home/beams/USERTXM/epics/synApps/support/tomostream/iocBoot/iocTomoStream_32ID"
+
+# Open a new tab in gnome-terminal, SSH into tomdet, activate conda, and run Python (without login shell)
+gnome-terminal --tab --title="$TAB_NAME" -- bash -c "
+    ssh -t ${REMOTE_USER}@${REMOTE_HOST} '
+        kill_IOC.sh ${APP_NAME}
+        cd ${WORK_DIR}
+        ./start_IOC;
+    ';
+"
+
