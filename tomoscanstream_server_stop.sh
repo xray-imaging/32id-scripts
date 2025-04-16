@@ -3,7 +3,7 @@
 # Define variables
 TAB_NAME="tomoScanStream py server"
 REMOTE_USER="usertxm"
-REMOTE_HOST="txmtwo"
+REMOTE_HOST="gauss"
 SCRIPT_NAME="start_tomoscan.py"
 
 # Open a new tab in gnome-terminal, SSH into tomdet, activate conda, and run Python (without login shell)

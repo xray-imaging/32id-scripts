@@ -3,7 +3,7 @@
 # Define variables
 TAB_NAME="tomoScanStream py server"
 REMOTE_USER="usertxm"
-REMOTE_HOST="txmtwo"
+REMOTE_HOST="gauss"
 CONDA_ENV="tomoscan"
 SCRIPT_NAME="start_tomoscan.py"
 WORK_DIR="/home/beams/USERTXM/epics/synApps/support/tomoscan/iocBoot/iocTomoScanStream_32ID/"

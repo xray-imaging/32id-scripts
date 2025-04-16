@@ -3,7 +3,7 @@
 # Define variables
 TAB_NAME="ADetector IOC"
 REMOTE_USER="usertxm"
-REMOTE_HOST="txmtwo"
+REMOTE_HOST="gauss"
 WORK_DIR="/home/beams/USERTXM/epics/synApps/support/32idbSP1/iocBoot/ioc32idbSP1/softioc/"
 
 # Open a new tab in gnome-terminal, SSH into tomdet, activate conda, and run Python (without login shell)

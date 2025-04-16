@@ -3,7 +3,7 @@
 # Define variables
 TAB_NAME="tomoScanStep IOC"
 REMOTE_USER="usertxm"
-REMOTE_HOST="txmtwo"
+REMOTE_HOST="gauss"
 SCRIPT_NAME="start_tomoscan.py"
 APP_NAME="tomoScanApp"
 

@@ -1,17 +1,16 @@
 #!/bin/bash
 
 # Define variables
-TAB_NAME="tomoScan IOC"
+TAB_NAME="ADetector IOC"
 REMOTE_USER="usertxm"
-REMOTE_HOST="txm4"
-APP_NAME="tomoScanApp"
-SCRIPT_NAME="start_tomoscan.py"
+REMOTE_HOST="gauss"
+WORK_DIR="/home/beams/USERTXM/epics/synApps/support/32idbSP2/iocBoot/ioc32idbSP2/softioc/"
 
 # Open a new tab in gnome-terminal, SSH into tomdet, activate conda, and run Python (without login shell)
 gnome-terminal --tab --title="$TAB_NAME" -- bash -c "
     ssh -t ${REMOTE_USER}@${REMOTE_HOST} '
-        ~/scripts/kill_IOC.sh ${APP_NAME}
-        ~/scripts/kill_server.sh ${SCRIPT_NAME}  
+        cd ${WORK_DIR}
+        ./32idbSP1.sh stop
     ';
 "
 
