@@ -3,7 +3,7 @@
 # Define variables
 TAB_NAME="tomoScan IOC"
 REMOTE_USER="usertxm"
-REMOTE_HOST="txm4"
+REMOTE_HOST="gauss"
 CONDA_ENV="tomoscan"
 APP_NAME="tomoScanApp"
 WORK_DIR="/home/beams/USERTXM/epics/synApps/support/tomoscan/iocBoot/iocTomoScan_32ID/"

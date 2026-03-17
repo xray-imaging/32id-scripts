@@ -5,10 +5,10 @@ file {
 }
 display {
 	object {
-		x=448
-		y=307
+		x=438
+		y=299
 		width=749
-		height=529
+		height=574
 	}
 	clr=14
 	bclr=4
@@ -775,6 +775,53 @@ display {
 	command[0] {
 		label="Restart detector"
 		name="bash /home/beams/USERTXM/scripts/detector_IOC_blackfly_stop.sh"
+	}
+	clr=0
+	bclr=20
+	label="-Stop"
+}
+"shell command" {
+	object {
+		x=55
+		y=526
+		width=240
+		height=30
+	}
+	command[0] {
+		label="32idaSoft IOC"
+		name="/net/s32dserv/xorApps/epics/synApps_6_3/ioc/32idaSoft/iocBoot/ioc32idaSoft/softioc/./32idaSoft.pl start"
+	}
+	clr=0
+	bclr=49
+	label="-32idaSoft"
+}
+"text update" {
+	object {
+		x=305
+		y=531
+		width=100
+		height=20
+	}
+	monitor {
+		chan="32id:Energy:ServerRunning"
+		clr=14
+		bclr=2
+	}
+	clrmod="alarm"
+	format="string"
+	limits {
+	}
+}
+"shell command" {
+	object {
+		x=3
+		y=526
+		width=50
+		height=30
+	}
+	command[0] {
+		label="TomoScan"
+		name="/net/s32dserv/xorApps/epics/synApps_6_3/ioc/32idaSoft/iocBoot/ioc32idaSoft/softioc/./32idaSoft.pl stop"
 	}
 	clr=0
 	bclr=20

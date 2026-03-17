@@ -3,7 +3,7 @@
 # Define variables
 TAB_NAME="txmOptics py server"
 REMOTE_USER="usertxm"
-REMOTE_HOST="txm4"
+REMOTE_HOST="32idcws"
 CONDA_ENV="tomoscan"
 SCRIPT_NAME="start_txmoptics.py"
 WORK_DIR="/home/beams/USERTXM/epics/synApps/support/txmoptics/iocBoot/iocTXMOptics/"
