@@ -8,7 +8,7 @@ display {
 		x=2290
 		y=255
 		width=749
-		height=540
+		height=580
 	}
 	clr=14
 	bclr=4
@@ -919,4 +919,49 @@ display {
 	clr=0
 	bclr=49
 	label="-TomoScanFPGA IOC"
+}
+"shell command" {
+	object {
+		x=3
+		y=539
+		width=50
+		height=30
+	}
+	command[0] {
+		label="JenaNV200D"
+		name="bash /home/beams/USERTXM/scripts/JenaNV200D_IOC_stop.sh"
+	}
+	clr=0
+	bclr=20
+	label="-Stop"
+}
+"shell command" {
+	object {
+		x=55
+		y=539
+		width=240
+		height=30
+	}
+	command[0] {
+		label="JenaNV200D"
+		name="bash /home/beams/USERTXM/scripts/JenaNV200D_IOC.sh"
+	}
+	clr=0
+	bclr=49
+	label="-Jena NV200D IOC"
+}
+rectangle {
+	object {
+		x=305
+		y=544
+		width=90
+		height=20
+	}
+	"basic attribute" {
+		clr=15
+	}
+	"dynamic attribute" {
+		vis="if not zero"
+		chan="JenaNV200D:jena1:twv.VAL"
+	}
 }

@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Launch MEDM for the 32-ID IOC start/stop control screen.
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+export EPICS_DISPLAY_PATH="${EPICS_DISPLAY_PATH:-.}:${SCRIPT_DIR}"
+
+cd "${SCRIPT_DIR}"
+medm -x iocs_start.adl &

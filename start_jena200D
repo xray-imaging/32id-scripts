@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Launch MEDM for the Jena NV200D piezo controller IOC.
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+
+export EPICS_DISPLAY_PATH="${EPICS_DISPLAY_PATH:-.}:${SCRIPT_DIR}"
+
+cd "${SCRIPT_DIR}"
+medm -x -macro "P=JenaNV200D:,M1=jena1:,M2=jena2:,P1=32idb:,M20=m25,M21=m26" JenaNV200D.adl &
