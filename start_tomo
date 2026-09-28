@@ -1,0 +1,132 @@
+#!/bin/bash
+# Open the 32-ID-C Micro-CT tomography main screen.
+#
+# The 32-ID-C counterpart of 19-BM's start_tomo, which is itself derived from
+# 2-BM's start_tomo_scan.  Differences from the 19-BM original:
+#
+#   - Kinetix (ADKinetix) in place of the Vieworks/ADEuresys detector.
+#   - mctOptics is installed here, so the optics metadata records are real
+#     rather than folded into the tomoscan IOC as they are at 19-BM.
+#   - The white-beam slit blades, two of the four hexapod slots and the BLEPS
+#     panel were removed from mct_main.adl: 32-ID-C has no hardware for them
+#     and a permanently blank widget is indistinguishable from a PV that has
+#     just gone down.  mct_main_19BM_orig.adl next to it is the unmodified
+#     19-BM screen, kept for diffing.
+#
+# Scripts at 32-ID live in ~/scripts (already on PATH via .cshrc), not ~/bin.
+
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+ADL="$SCRIPT_DIR/adl"
+
+# --- Channel Access ---------------------------------------------------------
+# Scoped to this screen on purpose: it is exported here rather than in ~/.cshrc
+# so that starting the screen cannot change the CA environment of anything else
+# already running.
+#
+# txmthree sits on the public 32-ID subnet; every beamline IOC and the PV
+# gateway sit on the private one, which txmthree is not on.  A directed
+# broadcast to the private subnet is therefore useless -- routers do not forward
+# directed broadcasts, so it reaches nothing, which is why the default list in
+# ~/.cshrc leaves the machine-status and motor panels blank.  Those hosts have
+# to be named individually, by unicast, the way 19-BM does it.
+#
+# Named by hostname rather than address: both EPICS_CA_ADDR_LIST and
+# EPICS_PVA_ADDR_LIST resolve names at startup, so this keeps the numbering out
+# of a public repository and survives a host being readdressed.
+#
+#   <broadcast>   local broadcast, public 32-ID subnet
+#   s32pvgate     APS machine PVs: S-DCCT:CurrentM, S:ActualMode, OPS:message*,
+#                 RF-ACIS:*, SR-ACIS:32ID:*, PA:32ID:*
+#   gauss
+#   txm4          32idcSoft: the rotary stage
+#   maxwell       32idK1: Kinetix, 32idc: tomoScan, mctOptics
+#   ioc32idc01 \  32idc02: the sample stack (Tomo_X / Tomo_Y / Pitch / Roll)
+#   ioc32idc02 /
+#
+# Still missing: the host serving 32idb: (the B-branch shutter).  There is no
+# ioc32idb01 in DNS and none of the hosts above answer for it.
+export EPICS_CA_AUTO_ADDR_LIST=no
+export EPICS_CA_ADDR_LIST="164.54.102.255 s32pvgate gauss txm4 maxwell ioc32idc01 ioc32idc02"
+
+SUPPORT=/home/beams/USERTXM/epics/synApps/support
+TOMOSCAN=$SUPPORT/tomoscan
+ADKINETIX=$SUPPORT/ADKinetix
+MCTOPTICS=$SUPPORT/mctoptics
+# ADKinetix's own configure/RELEASE sets SUPPORT=/APSshare/epics/synApps_6_3/support,
+# so its screens were built against the ADCore and motor screens found there.
+APSSHARE=/APSshare/epics/synApps_6_3/support
+AREA_DETECTOR=$APSSHARE/areaDetector-R3-14
+MOTOR=$APSSHARE/motor-R7-3-1
+
+# mct_main.adl opens related displays from several modules, so unlike the
+# tomoscan screens these cannot be found relative to the parent file.  No
+# ADGenICam entry: ADKinetix is not a GenICam driver, it talks PVCAM.
+export EPICS_DISPLAY_PATH="$ADL\
+:$TOMOSCAN/tomoScanApp/op/adl\
+:$ADKINETIX/kinetixApp/op/adl\
+:$MCTOPTICS/mctOpticsApp/op/adl\
+:$AREA_DETECTOR/ADCore/ADApp/op/adl\
+:$MOTOR/motorApp/op/adl"
+# No path into another beamline's account, deliberately -- the same rule the
+# 19-BM script states.  detector_status.adl and DTaggingUpdate.adl are local
+# copies in $ADL; both originate from mctoptics, but the mctoptics installed
+# here does not carry them, so a local copy is the right home.
+
+# --- tomoscan IOC -----------------------------------------------------------
+TS=32idc:
+TS_R=TomoScan:
+TS_BEAMLINE=tomoScan_32IDC
+
+# --- optics metadata --------------------------------------------------------
+# Unlike 19-BM, 32-ID-C runs the mctOptics server, so this pair is the real
+# mctOptics prefix and the ScintillatorType / ImagePixelSize / CameraObjective
+# widgets are live.  Note 32id:, not 32idc: -- mctOptics is served under the
+# sector prefix.  This matches MCT_OPTICS in iocTomoScan_32IDC/tomoScan.substitutions.
+P=32id:
+R=MCTOptics:
+
+# --- detector ---------------------------------------------------------------
+# Teledyne Photometrics Kinetix, ADKinetix, IOC on maxwell.
+AD0=32idK1:
+AD0_CAM=cam1:
+AD0_PROC1=Proc1:
+AD0_HDF=HDF1:
+
+# --- motors -----------------------------------------------------------------
+# The screen drives five axes through three prefixes.  At 2-BM/19-BM P2 is a
+# pair sitting on top of the rotary and P3 is a hexapod underneath it; at
+# 32-ID-C the whole sample stack is on one motor IOC, so P2 and P3 are the same
+# prefix and the slots are filled by function:
+#
+#   $(P1)$(M3)   32idcSoft:ens:c1:m1   Rotation   (Aerotech ABRS-150MP)
+#   $(P2)$(M5)   32idc02:m23           Tomo_Y     vertical
+#   $(P2)$(M6)   32idc02:m39           Tomo_X     the "0/180" translation
+#   $(P3)$(M1)   32idc02:m38           Tomo_Pitch alignment
+#   $(P3)$(M2)   32idc02:m37           Tomo_Roll  alignment
+#
+# 32idc02:m7 (Tomo_Z) is deliberately absent.  It is a placeholder record wired
+# to no stage -- it exists only so the mctOptics server will start, which needs
+# a LENS_SAMPLE_Z PV.  Its .EGU still reads "deg" from a previous use.  Do not
+# put it on this screen: it would look like a translation axis and move nothing.
+#
+# 32idc02: also serves motors belonging to other 32-ID setups (AM_*, Bio_*,
+# Huber_*) and the Optique Peter optics (m9-m16).  Those are not part of the
+# Micro-CT sample stack -- do not fill a spare slot by guessing a motor number.
+P1=32idcSoft:
+M3=ens:c1:m1
+
+P2=32idc02:
+M5=m23
+M6=m39
+
+P3=32idc02:
+M1=m38
+M2=m37
+
+MACROS="P=$P,R=$R"
+MACROS="$MACROS,TS=$TS,TS_R=$TS_R,TS_BEAMLINE=$TS_BEAMLINE"
+MACROS="$MACROS,AD0=$AD0,AD0_CAM=$AD0_CAM,AD0_PROC1=$AD0_PROC1,AD0_HDF=$AD0_HDF"
+MACROS="$MACROS,P1=$P1,P2=$P2,P3=$P3"
+MACROS="$MACROS,M1=$M1,M2=$M2,M3=$M3,M5=$M5,M6=$M6"
+
+medm -x -macro "$MACROS" "$ADL/mct_main.adl" &
